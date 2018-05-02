@@ -16,7 +16,7 @@ public class FirstActivity extends AppCompatActivity {
         Log.i(TAG, "++++++++++ onCreate(" + (savedInstanceState != null ? "savedInstanceState" : "null") + ")");
     }
 
-    private static final String TAG = "TRACE FirstActivity";
+    private static final String TAG = "ACLMA FirstActivity";
     @Override protected void onStart() {
         Log.i(TAG, "onStart()");
         super.onStart();
