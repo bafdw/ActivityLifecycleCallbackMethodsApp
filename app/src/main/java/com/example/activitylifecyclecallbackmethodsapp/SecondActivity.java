@@ -22,7 +22,7 @@ public class SecondActivity extends AppCompatActivity {
         Log.i(TAG, "++++++++++ onCreate(" + (savedInstanceState != null ? "savedInstanceState" : "null") + ")");
     }
 
-    private static final String TAG = "ACLMA SecondActivity";
+    private static final String TAG = "ALCMA SecondActivity";
     @Override protected void onStart() {
         Log.i(TAG, "onStart()");
         super.onStart();
