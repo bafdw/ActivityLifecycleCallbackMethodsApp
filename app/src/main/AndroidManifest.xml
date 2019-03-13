@@ -18,12 +18,7 @@
         </activity>
         <activity
             android:name=".SecondActivity"
-            android:label="ACLMA: SecondActivity"
-            android:parentActivityName=".FirstActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.activitylifecyclecallbackmethodsapp.FirstActivity"/>
+            android:label="ACLMA: SecondActivity">
         </activity>
     </application>
 

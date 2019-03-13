@@ -13,7 +13,12 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        Log.i(TAG, "++++++++++ onCreate(" + (savedInstanceState != null ? "savedInstanceState" : "null") + ")");
+        if (savedInstanceState != null)
+            _someField = savedInstanceState.getString("sleutelX");
+        else
+            _someField = "initial value";
+
+        Log.i(TAG, "++++++++++ onCreate(" + (savedInstanceState != null ? "savedInstanceState" : "null") + "/_someField=" + _someField + ")");
     }
 
     private static final String TAG = "ALCMA FirstActivity";
@@ -23,6 +28,7 @@ public class FirstActivity extends AppCompatActivity {
     }
     @Override protected void onResume() {
         Log.i(TAG, "onResume()");
+        _someField = "changed value";
         super.onResume();
     }
     @Override protected void onPause() {
@@ -41,12 +47,15 @@ public class FirstActivity extends AppCompatActivity {
         Log.i(TAG, "---------- onDestroy()");
         super.onDestroy();
     }
+    private String _someField;
     @Override protected void onSaveInstanceState(Bundle outState) {
         Log.i(TAG, "onSaveInstanceState(outState)");
+        outState.putString("sleutelX", _someField);
         super.onSaveInstanceState(outState);
     }
     @Override protected void onRestoreInstanceState(Bundle savedState) {
         Log.i(TAG, "onRestoreInstanceState(savedInstanceState)");
+        _someField = savedState.getString("sleutelX");
         super.onRestoreInstanceState(savedState);
     }
 
